@@ -1,15 +1,18 @@
 package types
 
+// GetCountryResponse represent GetCountry Response
 type GetCountryResponse struct {
 	ComponentChunkName string        `json:"componentChunkName"`
 	Path               string        `json:"path"`
 	Result             CountryResult `json:"result"`
 }
 
+// CountryResult represent Country Result
 type CountryResult struct {
 	PageContext CountryPageContext `json:"pageContext"`
 }
 
+// CountryPageContext represent Country Page Context
 type CountryPageContext struct {
 	CountryCode          string      `json:"countryCode"`
 	HideMap              bool        `json:"hideMap"`
@@ -28,11 +31,13 @@ type CountryPageContext struct {
 	TransmissionData     interface{} `json:"transmissionData"`
 }
 
+// Feature represent Feature
 type Feature struct {
 	Type       string     `json:"type"`
 	Properties Properties `json:"properties"`
 }
 
+// Properties represent Properties
 type Properties struct {
 	ISO2Code  string `json:"ISO_2_CODE"`
 	Adm0Name  string `json:"ADM0_NAME"`
@@ -41,6 +46,7 @@ type Properties struct {
 	WHORegion string `json:"WHO_REGION"`
 }
 
+// Day represent Daily information
 type Day struct {
 	Confirmed           int64 `json:"Confirmed"`
 	CumulativeConfirmed int64 `json:"Cumulative Confirmed"`
@@ -48,6 +54,7 @@ type Day struct {
 	CumulativeDeaths    int64 `json:"Cumulative Deaths"`
 }
 
+// Totals represent Totals information
 type Totals struct {
 	Deaths                interface{} `json:"Deaths"`
 	CumulativeDeaths      interface{} `json:"Cumulative Deaths"`
